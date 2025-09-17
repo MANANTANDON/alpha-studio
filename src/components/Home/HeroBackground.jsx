@@ -1,71 +1,61 @@
-import { Box, Grid2 } from "@mui/material";
+import { Box, Grid2, useMediaQuery } from "@mui/material";
 import React from "react";
 
 export const HeroBackground = () => {
+  const isLaptop = useMediaQuery("(max-width:768px)");
+  const gridCount = isLaptop ? 8 : 12;
+
+  const AllGrids = (
+    <>
+      {Array.from(Array(gridCount)).map((item, key) => (
+        <Grid2
+          size={{ xs: 1.5, md: 1 }}
+          sx={{
+            height: { xs: "50px", sm: "90px" },
+            border: "1px solid #EBEBEB",
+          }}
+        />
+      ))}
+    </>
+  );
+
+  const SkippedGrids = (
+    <>
+      {Array.from(Array(gridCount)).map((item, key) => (
+        <Grid2
+          size={{ xs: 1.5, md: 1 }}
+          sx={{
+            height: { xs: "50px", sm: "90px" },
+            border: {
+              xs: "none",
+              md: (key === 0 || key === 11) && "1px solid #EBEBEB",
+            },
+          }}
+        ></Grid2>
+      ))}
+    </>
+  );
   return (
     <>
-      <Box sx={{ mx: -3 }}>
+      <Box sx={{ mx: { xs: -3 }, border: "1px solid #EBEBEB" }}>
         <Grid2 container>
-          {Array.from(Array(12)).map((item, key) => (
+          {Array.from(Array(gridCount)).map((item, key) => (
             <Grid2
-              size={{ xs: 1 }}
-              sx={{ height: "90px", border: "1px solid #EBEBEB" }}
-            ></Grid2>
-          ))}
-          {Array.from(Array(12)).map((item, key) => (
-            <Grid2
-              size={{ xs: 1 }}
+              size={{ xs: 1.5, sm: 1.5, md: 1 }}
               sx={{
-                height: "90px",
-                border: (key === 0 || key === 11) && "1px solid #EBEBEB",
+                height: { xs: "50px", sm: "90px" },
+                border: { xs: "none", md: "1px solid #EBEBEB" },
               }}
-            ></Grid2>
+            />
           ))}
-          {Array.from(Array(12)).map((item, key) => (
-            <Grid2
-              size={{ xs: 1 }}
-              sx={{
-                height: "90px",
-                border: (key === 0 || key === 11) && "1px solid #EBEBEB",
-              }}
-            ></Grid2>
-          ))}
-          {Array.from(Array(12)).map((item, key) => (
-            <Grid2
-              size={{ xs: 1 }}
-              sx={{
-                height: "90px",
-                border: (key === 0 || key === 11) && "1px solid #EBEBEB",
-              }}
-            ></Grid2>
-          ))}
-          {Array.from(Array(12)).map((item, key) => (
-            <Grid2
-              size={{ xs: 1 }}
-              sx={{
-                height: "90px",
-                border: (key === 0 || key === 11) && "1px solid #EBEBEB",
-              }}
-            ></Grid2>
-          ))}
-          {Array.from(Array(12)).map((item, key) => (
-            <Grid2
-              size={{ xs: 1 }}
-              sx={{ height: "90px", border: "1px solid #EBEBEB" }}
-            ></Grid2>
-          ))}
-          {Array.from(Array(12)).map((item, key) => (
-            <Grid2
-              size={{ xs: 1 }}
-              sx={{ height: "90px", border: "1px solid #EBEBEB" }}
-            ></Grid2>
-          ))}
-          {Array.from(Array(12)).map((item, key) => (
-            <Grid2
-              size={{ xs: 1 }}
-              sx={{ height: "90px", border: "1px solid #EBEBEB" }}
-            ></Grid2>
-          ))}
+          {SkippedGrids}
+          {SkippedGrids}
+          {SkippedGrids}
+          {SkippedGrids}
+
+          {AllGrids}
+          {AllGrids}
+          {AllGrids}
         </Grid2>
       </Box>
     </>

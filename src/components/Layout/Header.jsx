@@ -1,4 +1,5 @@
-import { Box, Button, Typography } from "@mui/material";
+import { MenuRounded } from "@mui/icons-material";
+import { Box, Button, IconButton, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
@@ -12,7 +13,7 @@ export const Header = () => {
           alignItems: "center",
           justifyContent: "space-between",
           borderBottom: "1px solid #EDEDED",
-          px: 4,
+          px: { xs: 0, sm: 4 },
         }}
         className="gradient-effect-two"
       >
@@ -27,12 +28,18 @@ export const Header = () => {
           />
           <Typography
             className="font-bg"
-            sx={{ fontWeight: 500, fontSize: "26px" }}
+            sx={{ fontWeight: 500, fontSize: { xs: "20px", md: "26px" } }}
           >
             Snowchild Studio
           </Typography>
         </Box>
-        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+        <Box
+          sx={{
+            display: { xs: "none", sm: "flex" },
+            alignItems: "center",
+            gap: 2,
+          }}
+        >
           {["Projects", "About us"].map((item, key) => (
             <Typography
               className="font-bg"
@@ -58,6 +65,11 @@ export const Header = () => {
             Contact us
           </Button>
         </Box>
+        <IconButton
+          sx={{ border: "1px solid #ebebeb", display: { sm: "none" } }}
+        >
+          <MenuRounded fontSize="small" />
+        </IconButton>
       </Box>
     </>
   );

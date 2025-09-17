@@ -1,6 +1,5 @@
 import { HeroSection } from "@/components/Home/HeroSection";
 import { Layout } from "@/components/Layout/Layout";
-import { MainCont } from "@/components/MainCont";
 import Head from "next/head";
 
 export default function Home() {
@@ -13,7 +12,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        {/* <MainCont /> */}
         <HeroSection />
       </Layout>
     </>

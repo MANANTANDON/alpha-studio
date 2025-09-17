@@ -10,10 +10,10 @@ export const HeroContent = () => {
   const baseButtonStyle = {
     textTransform: "none",
     zIndex: 100,
-    px: { xs: 3, sm: 5 },
+    px: { xs: 2, sm: 5 },
     py: 1,
     borderRadius: "30px",
-    fontSize: { xs: "16px", sm: "20px" },
+    fontSize: { xs: "14px", sm: "20px" },
     fontWeight: 500,
     transition: "all 0.3s ease",
     "&:hover": {
@@ -61,7 +61,7 @@ export const HeroContent = () => {
         position: "absolute",
         left: 0,
         right: 0,
-        top: { xs: "120px", sm: "150px" },
+        top: { xs: "20px", sm: "80px", md: "130px" },
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -72,9 +72,8 @@ export const HeroContent = () => {
       {/* Hero Typography */}
       <Typography
         sx={{
-          fontSize: { xs: "32px", sm: "48px", md: "56px" },
+          fontSize: { xs: "32px", sm: "48px", md: "48px", lg: "56px" },
           mt: { xs: 3, sm: 5 },
-          mb: 3,
           lineHeight: 1.1,
         }}
         className="font-bg"
@@ -94,6 +93,16 @@ export const HeroContent = () => {
           }}
         />
       </Typography>
+      <Typography
+        sx={{
+          fontSize: { xs: "16px", sm: "26px", md: "26px" },
+          color: "#444444",
+          my: 3,
+        }}
+        className="font-bg"
+      >
+        We build 👨🏻‍💻 the web your way...
+      </Typography>
 
       {/* Action Buttons */}
       <Box
@@ -102,7 +111,6 @@ export const HeroContent = () => {
           alignItems: "center",
           justifyContent: "center",
           gap: { xs: 1.5, sm: 2 },
-          mt: 3,
           mb: 5,
           flexWrap: "wrap",
         }}

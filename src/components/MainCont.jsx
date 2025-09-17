@@ -1,9 +1,11 @@
 import { Box, Button, Paper, Typography, useMediaQuery } from "@mui/material";
 import Typewriter from "typewriter-effect";
 import React from "react";
+import { ArrowOutwardRounded } from "@mui/icons-material";
 
 export const MainCont = () => {
   const isLaptop = useMediaQuery("(max-width: 768px)");
+
   return (
     <>
       <Paper
@@ -44,7 +46,7 @@ export const MainCont = () => {
                 onInit={(typewriter) => {
                   typewriter
                     .typeString(
-                      "Welcome to <br/><strong>Snowchild Studio</strong>"
+                      "Welcome to a Creative Collective <br/><strong>Snowchild Studio</strong>"
                     )
                     .start();
                 }}
@@ -56,12 +58,17 @@ export const MainCont = () => {
                 }}
                 onInit={(typewriter) => {
                   typewriter
-                    .typeString("Welcome to <strong>Snowchild Studio</strong>")
+                    .typeString(
+                      "Welcome to a Creative Collective <br/><strong>Snowchild Studio</strong>"
+                    )
                     .start();
                 }}
               />
             )}
           </Typography>
+
+          {/* Tagline */}
+
           <Button
             className="font-bg"
             sx={{
@@ -69,11 +76,19 @@ export const MainCont = () => {
               bgcolor: "#FFFFFF",
               color: "#080808",
               px: 5,
-              fontSize: "20px",
+              py: 1.5,
+              fontSize: "18px",
               borderRadius: "30px",
+              fontWeight: 500,
+              "&:hover": {
+                bgcolor: "#f5f5f5",
+                transform: "translateY(-2px)",
+                transition: "all 0.3s ease",
+              },
             }}
+            endIcon={<ArrowOutwardRounded />}
           >
-            work with us !
+            Let's Create Magic Together
           </Button>
         </Box>
       </Paper>

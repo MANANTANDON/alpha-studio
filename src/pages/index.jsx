@@ -1,4 +1,4 @@
-import { TopCont } from "@/components/Home/TopCont";
+import { Layout } from "@/components/Layout/Layout";
 import { MainCont } from "@/components/MainCont";
 import Head from "next/head";
 
@@ -11,8 +11,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <MainCont /> */}
-      <TopCont />
+      <Layout>
+        <MainCont />
+      </Layout>
     </>
   );
 }
